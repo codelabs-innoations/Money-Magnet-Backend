@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as a base image
-FROM node:16
+FROM node:16 as build
 
 # Set the working directory inside the container (root directory since index.js is here)
 WORKDIR /app
@@ -12,6 +12,8 @@ RUN npm install
 
 # Copy all project files to the working directory
 COPY . .
+
+EXPOSE 3000
 
 # Command to start the app
 CMD ["node", "index.js"]
