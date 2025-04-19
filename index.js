@@ -29,4 +29,4 @@ app.get('/', function(req, res) {
 UserRouter.routesConfig(app);
 WalletRouter.routesConfig(app);
 
-app.listen(process.env.CON_PORT, () => console.log(`App is listening port ${process.env.PORT} and connected to ${process.env.MONGOOSE_CONNECTION}`))
+app.listen(process.env.CON_PORT, () => console.log(`App is listening port ${process.env.CON_PORT} and connected to ${process.env.MONGOOSE_CONNECTION}`))
