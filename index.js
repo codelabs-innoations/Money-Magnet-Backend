@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', function(req, res) {
-    res.status(200).send({status: true, message: "iOS Course Work Backend on Live"})
+    res.status(200).send({status: true, message: "Money Magnet Backend is on Live"})
 })
 
 UserRouter.routesConfig(app);
