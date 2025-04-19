@@ -33,7 +33,7 @@ const joiTransactionSchema = Joi.object({
     transactionAmount: Joi.number().required(),
     transactionRemark: Joi.string().required(),
     transactionImg: Joi.string(),
-    transactionTimeStamp: Joi.number()
+    transactionTimeStamp: Joi.number().required()
 });
 
 exports.joiWallet = Joi.object({

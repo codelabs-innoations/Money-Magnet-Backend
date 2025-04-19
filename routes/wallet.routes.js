@@ -5,6 +5,7 @@ const UserMiddleware = require('../middlewares/user.middleware.js')
 exports.routesConfig = function(app) {
     app.post('/wallet/add', [
         UserMiddleware.checkValidJWT,
+        WalletMiddleware.validateAdd,
         WalletController.addTransaction
     ]);
 
