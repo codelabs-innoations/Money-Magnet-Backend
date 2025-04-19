@@ -6,10 +6,10 @@ exports.WalletSchema = function (mongoose) {
         transactionType: Number,
         transactionCategory: Number,
         transactionDate: Number,
-        transactionTimeStamp: Number,
         transactionAmount: Number,
         transactionRemark: String,
-        transactionImg: String
+        transactionImg: String,
+        transactionTimeStamp: Number
     });
 
     const walletSchema = new mongoose.Schema({
@@ -30,10 +30,10 @@ const joiTransactionSchema = Joi.object({
     transactionType: Joi.number().required(),
     transactionCategory: Joi.number().required(),
     transactionDate: Joi.number(),
-    transactionTimeStamp: Joi.number(),
     transactionAmount: Joi.number().required(),
     transactionRemark: Joi.string().required(),
-    transactionImg: Joi.string()
+    transactionImg: Joi.string(),
+    transactionTimeStamp: Joi.number()
 });
 
 exports.joiWallet = Joi.object({
