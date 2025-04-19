@@ -123,14 +123,14 @@ function filterTransactions(transactions, filter, currentDate) {
         const transactionDate = new Date(transaction.transactionTimeStamp);
         if (filter === "0") {
             return (
-                transactionDate.getDate() === currentDate.getDate()
+                transactionDate.getDate() === currentDate.getDate() && transactionDate.getMonth() === currentDate.getMonth() && transactionDate.getFullYear() === currentDate.getFullYear()
             );
         } else if (filter === "1") {
             return (
-                transactionDate.getMonth() === currentDate.getMonth()
+                transactionDate.getMonth() === currentDate.getMonth() && transactionDate.getFullYear() === currentDate.getFullYear()
             );
         } else if (filter === "2") {
-            return transactionDate.getFullYear() === currentDate.getFullYear();
+            return transactionDate.getFullYear() === currentDate.getFullYear()
         } else {
             return true;
         }
