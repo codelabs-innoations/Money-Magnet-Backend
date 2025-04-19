@@ -26,6 +26,10 @@ app.get('/', function(req, res) {
     res.status(200).send({status: true, message: "Money Magnet Backend is on Live"})
 })
 
+app.get('/hello', function(req, res) {
+    res.status(200).send({status: true, message: "Hello"})
+})
+
 UserRouter.routesConfig(app);
 WalletRouter.routesConfig(app);
 
