@@ -6,6 +6,7 @@ exports.WalletSchema = function (mongoose) {
         transactionType: Number,
         transactionCategory: Number,
         transactionDate: Number,
+        transactionTimeStamp: Number,
         transactionAmount: Number,
         transactionRemark: String,
         transactionImg: String
@@ -29,6 +30,7 @@ const joiTransactionSchema = Joi.object({
     transactionType: Joi.number().required(),
     transactionCategory: Joi.number().required(),
     transactionDate: Joi.number(),
+    transactionTimeStamp: Joi.number(),
     transactionAmount: Joi.number().required(),
     transactionRemark: Joi.string().required(),
     transactionImg: Joi.string()

@@ -7,6 +7,7 @@ exports.addTransaction = (req, res) => {
         transactionType: req.body.transactionList[0].transactionType,
         transactionCategory: req.body.transactionList[0].transactionCategory,
         transactionDate: new Date().getTime(),
+        transactionTimeStamp: new Date().getTime(),
         transactionAmount: req.body.transactionList[0].transactionAmount,
         transactionRemark: req.body.transactionList[0].transactionRemark,
         transactionImg: req.body.transactionList[0].transactionImg || null
@@ -119,7 +120,7 @@ exports.getWalletDetails = async (req, res) => {
 
 function filterTransactions(transactions, filter, currentDate) {
     return transactions.filter((transaction) => {
-        const transactionDate = new Date(transaction.transactionDate);
+        const transactionDate = new Date(transaction.transactionTimeStamp);
         if (filter === "0") {
             return (
                 transactionDate.getDate() === currentDate.getDate()
