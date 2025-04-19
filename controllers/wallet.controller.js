@@ -7,7 +7,7 @@ exports.addTransaction = (req, res) => {
         transactionType: req.body.transactionList[0].transactionType,
         transactionCategory: req.body.transactionList[0].transactionCategory,
         transactionDate: new Date().getTime(),
-        transactionTimeStamp: new Date().getTime(),
+        transactionTimeStamp: req.body.transactionList[0].transactionTimeStamp,
         transactionAmount: req.body.transactionList[0].transactionAmount,
         transactionRemark: req.body.transactionList[0].transactionRemark,
         transactionImg: req.body.transactionList[0].transactionImg || null
